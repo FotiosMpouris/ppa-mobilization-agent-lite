@@ -1,0 +1,7 @@
+openai==1.55.3
+nostr-sdk==0.44.0
+streamlit==1.40.1
+python-dotenv==1.0.1
+pypdf==5.1.0
+watchdog==6.0.0
+requests

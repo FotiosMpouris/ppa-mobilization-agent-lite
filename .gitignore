@@ -1,0 +1,16 @@
+# Secrets (Never commit these!)
+.env
+
+# Python Virtual Environment
+venv/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# Local Data (Don't commit your PDFs or Logs)
+knowledge/*
+memory/*
+!knowledge/.gitkeep
+!memory/.gitkeep
