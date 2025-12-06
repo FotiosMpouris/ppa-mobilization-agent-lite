@@ -7,47 +7,68 @@ We built this tool to automate the mobilization strategy for the **Poor People A
 ### 🎯 What This Tool Does
 This is a **RAG (Retrieval-Augmented Generation) Agent** designed to make your advocacy easier, faster, and more consistent.
 
-*   **The Brain (RAG):** It reads PDF documents from a local folder to understand your specific cause, arguments, and data points.
-*   **The Voice:** It uses AI (OpenAI) to write content in a specific "persona" or writing style that you define.
+*   **The Brain:** It reads PDF documents from a local folder to understand your specific cause.
+*   **The Voice:** It uses AI (OpenAI) to write content in a specific "persona" or writing style.
 *   **The Memory:** It remembers the last 5 posts it generated so it doesn't repeat itself.
-*   **The Broadcast:** It connects directly to **Nostr** (using your private key) and **Telegram** to post content immediately without censorship.
+*   **The Broadcast:** It connects directly to **Nostr** and **Telegram** to post content immediately without censorship.
 
 ---
 
-## 🛠️ Prerequisites
+## 🛠️ Prerequisites (Don't Skip This!)
 
-Before you start, ensure you have these installed on your computer:
+Before you start, ensure you have these installed. We recommend **Python 3.14** for best compatibility.
 
-1.  **Python (3.10 or higher)**
-    *   *Verify:* Open your terminal and type `python --version`
+1.  **Python 3.14**
+    *   *Check if you have it:* Open Terminal and type `python --version`
 2.  **Git**
-    *   *Verify:* Type `git --version`
+    *   *Check if you have it:* Type `git --version`
 3.  **A Code Editor**
     *   We recommend **VS Code** or **Cursor**.
 
 ---
 
-## 🚀 Installation Guide
+## 🚀 Installation Guide (Step-by-Step)
 
-Follow these steps exactly to set up the agent on your machine.
+We have written this for beginners. Follow every step exactly.
 
 ### 1. Download the Code
-Open your terminal (PowerShell on Windows, Terminal on Mac) and run:
+1.  Open a new folder on your computer where you want this tool to live.
+2.  Open your Terminal (PowerShell on Windows, Terminal on Mac).
+3.  Run this command to download the tool:
 
 ```bash
 git clone https://github.com/FotiosMpouris/ppa-mobilization-agent-lite.git
-cd ppa-mobilization-agent-lite
 ```
 
-### 2. Create the Python Environment
-We create a "virtual environment" (sandbox) so this tool doesn't interfere with your other computer settings.
+### 2. Open the Project in Your Editor
+**This is important!** You must be inside the correct folder.
+1.  Open VS Code (or Cursor).
+2.  Go to **File > Open Folder...**
+3.  Select the `ppa-mobilization-agent-lite` folder you just downloaded.
+4.  Open a **New Terminal** inside the editor (`Terminal > New Terminal` in the top menu).
+
+### 3. Create the Python Environment
+We create a "virtual environment" (sandbox) so this tool doesn't interfere with your computer.
 
 **For Windows:**
+Copy and paste these commands one by one:
+
 ```bash
 python -m venv venv
+```
+
+**CRITICAL STEP FOR WINDOWS:**
+To allow the script to run, you might need to adjust your security policy. Run this exact command:
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+```
+
+Now, activate the sandbox:
+```bash
 .\venv\Scripts\activate
 ```
-*(Note: If you get a "script is disabled" error on Windows, run this command: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process`, then try the activate command again).*
+
+*(You should see `(venv)` appear in green at the start of your command line).*
 
 **For Mac/Linux:**
 ```bash
@@ -55,10 +76,8 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-*You should see `(venv)` appear at the start of your command line.*
-
-### 3. Install Dependencies
-This installs the necessary libraries (OpenAI, Nostr SDK, Streamlit, etc).
+### 4. Install Dependencies
+This installs the "brains" of the operation (OpenAI, Nostr SDK, etc).
 
 ```bash
 pip install -r requirements.txt
@@ -68,61 +87,73 @@ pip install -r requirements.txt
 
 ## 🔑 Configuration (The Secrets)
 
-This agent runs on **your** keys. Your secrets never leave your local computer.
+This agent runs on **your** keys. We do not see them. We do not save them.
 
-1.  Look for the file named `.env.example` in the project folder.
-2.  **Rename** this file to just `.env` (remove the .example extension).
-3.  Open `.env` in your text editor.
+### 1. Create your .env file
+We need to rename the example file. The easiest way is to use this command in your terminal:
 
-You need to fill in these values:
+```bash
+notepad .env.example
+```
 
-*   **OPENAI_API_KEY**: Required. This powers the intelligence. You can get one from [platform.openai.com](https://platform.openai.com).
-*   **NOSTR_NSEC**: Required if you want to post to Nostr. This is your **Private Key** (starts with `nsec1...`).
-*   **TELEGRAM_BOT_TOKEN**: Optional. Only needed if you are broadcasting to Telegram.
+This will open the file. Now, go to **File > Save As** and save it as simply `.env` (remove the .example part).
 
-**Save the file.**
+### 2. Get Your Keys (Tutorials Included)
+You need to fill in the values in that file. If you don't know how to get these keys, watch these specific tutorials:
+
+*   **OPENAI_API_KEY**: Required for the AI.
+    *   📺 **Watch:** [David Ondrej's Quick Setup Guide](https://youtu.be/qgT-quk3JEo?si=rH6PAtOMY-Vj7KXt)
+*   **NOSTR_NSEC**: Required for uncensorable posting.
+    *   📺 **Watch:** [Nostr Keys with Primal (Oslo Freedom Forum)](https://youtu.be/u_U2obseVwY?si=IgnmDv7M1VYDeKZC)
+*   **TELEGRAM_BOT_TOKEN**: Optional.
+    *   📺 **Watch:** [Setting up a Bot with JarvisBot](https://youtu.be/B9VsT7vV6jI?si=msxXzyEMRAyoa4O3)
+
+**Once you have pasted your keys, SAVE the .env file.**
 
 ---
 
 ## 🖥️ How to Run It
 
-Once installed and configured, run the application with this command:
+Use this specific command to launch the app. We use `python -m` to ensure it runs securely within your environment.
 
 ```bash
-streamlit run run.py
+python -m streamlit run run.py
 ```
 
 This will automatically open a browser window with your **Mission Control** interface.
 
-### Using the Interface
-1.  **Directives:** Type what you want the agent to write about (e.g., "Explain why decentralized money matters").
-2.  **Target Audience:** Select who you are talking to (this adjusts the tone/persona).
+### How to Use the Interface
+1.  **Directives:** Type what you want the agent to write about (e.g., "Explain why inflation hurts the working class").
+2.  **Target Audience:** Select who you are talking to.
 3.  **Execute Mission:** The agent reads your PDFs, checks its memory, and writes a draft.
-4.  **Edit & Launch:** You can edit the generated text in the box. When ready, click **Nostr** or **Telegram** to broadcast live.
+4.  **Edit & Launch:** You can edit the text. When ready, click **Nostr** or **Telegram** to broadcast live.
 
 ---
 
 ## 🧠 Customizing the Brain
 
-### The Knowledge Base (PDFs)
+### The Knowledge Base
 The agent reads **any PDF** you put inside the `knowledge/` folder.
+*   **Default:** Included is the **Poor People App White Paper**.
+*   **Make it Yours:** Delete the existing PDFs and drag in your own manifestos or research. The agent "learns" whatever is in this folder.
 
-*   **Default:** The kit comes pre-loaded with the **Poor People App White Paper**. Out of the box, it will advocate for the PPA mission.
-*   **Customize:** To make this agent work for *your* cause, simply **delete the existing PDFs** in the `knowledge/` folder and drag in your own manifestos, research papers, or articles. The agent immediately "learns" whatever you put there.
-
-### The Persona
-You can change *how* the agent writes by editing the file `src/agent.py`. Look for the `system_prompt` section to adjust its personality instructions.
+### The Helper (Stuck?)
+If you get stuck, we have included a file called `LLM_HELP.txt`.
+1.  Open `LLM_HELP.txt`.
+2.  Copy the text.
+3.  Paste it into **Gemini** or **ChatGPT** along with your error message.
+4.  The AI will tell you exactly how to fix it.
 
 ---
 
-## ⚠️ Troubleshooting
+## 🤝 Support the Mission
 
-**"Command not found"**
-Make sure you installed Python and added it to your PATH during installation.
+We built this tool to help you mobilize your community. If you found this useful:
 
-**"Access Denied" on Windows**
-If PowerShell won't let you run the activate script, run this command:
-`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process`
+1.  **Follow Us:** Posting about the **Poor People App** on Nostr helps us grow.
+2.  **Learn More:** Visit [poorpeople.app](https://poorpeople.app) to see the full vision.
+3.  **Meet the Founder:** Learn more about the mission at [fotiosmpouris.com](https://fotiosmpouris.com).
 
-**Browser doesn't open**
-If `streamlit run` doesn't open a tab automatically, copy the "Local URL" shown in the terminal (usually `http://localhost:8501`) and paste it into your browser.
+**Troubleshooting:**
+*   **"Command not found":** Ensure you installed Python and checked the box "Add to PATH" during installation.
+*   **Trend Micro / Antivirus Blocking:** Sometimes security software blocks the script. Allow the folder in your antivirus settings, or use the `python -m streamlit ...` command above.
