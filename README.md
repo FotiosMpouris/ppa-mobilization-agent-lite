@@ -7,22 +7,20 @@ We built this tool to automate the mobilization strategy for the **Poor People A
 ### 🎯 What This Tool Does
 This is a **RAG (Retrieval-Augmented Generation) Agent** designed to make your advocacy easier, faster, and more consistent.
 
-*   **The Brain:** It reads PDF documents from a local folder to understand your specific cause.
-*   **The Voice:** It uses AI (OpenAI) to write content in a specific "persona" or writing style.
+*   **The Brain:** It reads PDF documents from a local folder to understand your specific cause. Place as many PDF's as you like into the "brain"
+*   **The Voice:** It uses AI (OpenAI) to write content in a specific "persona" or writing style which you create with detailed descriptions and writing styles.
 *   **The Memory:** It remembers the last 5 posts it generated so it doesn't repeat itself.
-*   **The Broadcast:** It connects directly to **Nostr** and **Telegram** to post content immediately without censorship.
+*   **The Broadcast:** It connects and can post directly to **Nostr** and **Telegram**.
 
 ---
 
 ## 🛠️ Prerequisites (Don't Skip This!)
 
-Before you start, ensure you have these installed. We recommend **Python 3.14** for best compatibility.
+If you're new to building please open up your go-to LLM (I recommend Gemini 3.0 through the Google Ai Studio) Follow link to sign up https://aistudio.google.com/
+You can also open up the LLM_HELP.txt file in this repo and paste that prompt into the prompte field for your choice of LLM and make sure to replace the "Paste Your Error Here" text with your question or issue. It's important to get a conversation going with your LLM to bring it up to speed so that you're both on the same page.
 
-1.  **Python 3.14**
-    *   *Check if you have it:* Open Terminal and type `python --version`
-2.  **Git**
-    *   *Check if you have it:* Type `git --version`
-3.  **A Code Editor**
+
+**Choose A Code Editor**
     *   We recommend **VS Code** or **Cursor**.
 
 ---
@@ -31,10 +29,25 @@ Before you start, ensure you have these installed. We recommend **Python 3.14** 
 
 We have written this for beginners. Follow every step exactly.
 
+Open your IDE (Cursor or Visual Studio Code or other)
+Open the Terminal
+
+Before you start, ensure you have these installed. We recommend **Python 3.14** for best compatibility.
+
+1.  **Python 3.14**
+   If you don't have it installed go to https://www.python.org/downloads/, choose 3.14 and a python install manager will download.
+   Double click the download and it's fairly straightforward from there. If you get stuck, watch the tutorial video for this build or ask your LLM 
+2.  *   *Check if you have it:* Open Terminal and type `python --version`
+3.  **Git**
+    *   *Check if you have it:* Type `git --version`
+    If you don't have Git go to https://git-scm.com/install/windows and download it.
+    Any questions ask your LLM
+
 ### 1. Download the Code
-1.  Open a new folder on your computer where you want this tool to live.
-2.  Open your Terminal (PowerShell on Windows, Terminal on Mac).
-3.  Run this command to download the tool:
+1.  Go to the folder where you keep your projects (like your **Documents** folder or just your **Desktop**).
+2.  **Right-click** in the blank space and select **"Open in Terminal"** (Windows).
+    *   *Mac Users:* Open your Terminal app and type `cd Desktop` (or wherever you want it).
+3.  Run this command (this will automatically **create the folder** for you):
 
 ```bash
 git clone https://github.com/FotiosMpouris/ppa-mobilization-agent-lite.git
@@ -84,6 +97,8 @@ pip install -r requirements.txt
 ```
 
 ---
+
+## Any Questions Go To Your LLM...
 
 ## 🔑 Configuration (The Secrets)
 
