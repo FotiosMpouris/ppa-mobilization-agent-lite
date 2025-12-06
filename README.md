@@ -36,9 +36,10 @@ Before you start, ensure you have these installed.
 
 1.  **Python 3.14** (We recommend **Python 3.14** for best compatibility.)
    If you don't have it installed go to https://www.python.org/downloads/, choose 3.14 and a python install manager will download.
-   Double click the download and it's fairly straightforward from there. If you get stuck, watch the tutorial video for this build or ask your LLM. 
-2.  *   *Check if you already have it:* Open Terminal and type `python --version`
-3.  **Git**
+   Double click the download and it's fairly straightforward from there. If you get stuck, watch the tutorial video for this build or ask your LLM.
+   PLEASE NOTE: The "Add to PATH" Warning: In the Python installation step, you should bold the instruction: "When installing Python, check the box at the bottom that says 'Add       Python to PATH'." This is the #1 reason beginners fail. 
+3.  *   *Check if you already have it:* Open Terminal and type `python --version`
+4.  **Git**
     *   *Check if you have it:* Type `git --version`
     If you don't have Git go to https://git-scm.com/install/windows and download it.
     Any questions ask your LLM.
