@@ -1,0 +1,18 @@
+### COPY AND PASTE THIS INTO YOUR AI CHAT (GEMINI / Claude / Chat GPT Thinking) ###
+
+I am trying to run a local Python application called the "PPA Mobilization Agent." I am not a professional developer, so please explain things simply.
+
+Here is the technical context of the application:
+1. It is a Python script running on my local machine.
+2. It uses 'streamlit' for the user interface.
+3. It uses 'openai' for generating text.
+4. It uses 'nostr-sdk' to post to decentralized social media.
+5. It uses a virtual environment (venv).
+
+I am currently stuck. Here is the error message or issue I am facing:
+
+[PASTE YOUR ERROR HERE]
+
+Please tell me the exact command to type into my terminal to fix this.
+Provide your instructions in the most basic and easy to follow manner possible. You should not take anything for granted in terms of what you think I do or don't know. You should provide a very easy to understand explanation of what is happening.
+You should also ask any question that you need answers to, and with more easy to follow instructions, I will attempt to find answer to these questions so that you can help me solve this issue.
