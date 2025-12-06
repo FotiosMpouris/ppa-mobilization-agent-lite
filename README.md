@@ -5,10 +5,10 @@
 We built this tool to automate the mobilization strategy for the **Poor People App**, but we are releasing it as a modular tool for the community.
 
 ### 🎯 What This Tool Does
-This is a **RAG (Retrieval-Augmented Generation) Agent** designed to make your advocacy easier, faster, and more consistent.
+This is a **RAG (Retrieval-Augmented Generation) Agent** designed to make your content creation easier, faster, and more consistent.
 
-*   **The Brain:** It reads PDF documents from a local folder to understand your specific cause. Place as many PDF's as you like into the "brain"
-*   **The Voice:** It uses AI (OpenAI) to write content in a specific "persona" or writing style which you create with detailed descriptions and writing styles.
+*   **The Brain:** It reads PDF documents from a local folder to understand your specific cause.
+*   **The Voice:** It uses AI (OpenAI) to write content in a specific "persona" or writing style.
 *   **The Memory:** It remembers the last 5 posts it generated so it doesn't repeat itself.
 *   **The Broadcast:** It connects and can post directly to **Nostr** and **Telegram**.
 
@@ -16,8 +16,8 @@ This is a **RAG (Retrieval-Augmented Generation) Agent** designed to make your a
 
 ## 🛠️ Prerequisites (Don't Skip This!)
 
-If you're new to building please open up your go-to LLM (I recommend Gemini 3.0 through the Google Ai Studio) Follow link to sign up https://aistudio.google.com/
-You can also open up the LLM_HELP.txt file in this repo and paste that prompt into the prompte field for your choice of LLM and make sure to replace the "Paste Your Error Here" text with your question or issue. It's important to get a conversation going with your LLM to bring it up to speed so that you're both on the same page.
+If you're new to building please open up your go-to LLM. I recommend Gemini 3.0 through the Google Ai Studio. Follow link to sign up https://aistudio.google.com/
+You can also open up the LLM_HELP.txt file found in this repo, and paste that pre-made prompt into the your choice of LLM and make sure to replace the "Paste Your Error Here" text with your question or issue. It's important to get a conversation going with your LLM to bring it up to speed so that you're both on the same page in case you have more questions.
 
 
 **Choose A Code Editor**
@@ -29,19 +29,19 @@ You can also open up the LLM_HELP.txt file in this repo and paste that prompt in
 
 We have written this for beginners. Follow every step exactly.
 
-Open your IDE (Cursor or Visual Studio Code or other)
-Open the Terminal
+Open your IDE (Cursor or Visual Studio Code)
+Open the Terminal unde the View tab.
 
-Before you start, ensure you have these installed. We recommend **Python 3.14** for best compatibility.
+Before you start, ensure you have these installed. 
 
-1.  **Python 3.14**
+1.  **Python 3.14** (We recommend **Python 3.14** for best compatibility.)
    If you don't have it installed go to https://www.python.org/downloads/, choose 3.14 and a python install manager will download.
-   Double click the download and it's fairly straightforward from there. If you get stuck, watch the tutorial video for this build or ask your LLM 
-2.  *   *Check if you have it:* Open Terminal and type `python --version`
+   Double click the download and it's fairly straightforward from there. If you get stuck, watch the tutorial video for this build or ask your LLM. 
+2.  *   *Check if you already have it:* Open Terminal and type `python --version`
 3.  **Git**
     *   *Check if you have it:* Type `git --version`
     If you don't have Git go to https://git-scm.com/install/windows and download it.
-    Any questions ask your LLM
+    Any questions ask your LLM.
 
 ### 1. Download the Code
 1.  Go to the folder where you keep your projects (like your **Documents** folder or just your **Desktop**).
@@ -55,7 +55,7 @@ git clone https://github.com/FotiosMpouris/ppa-mobilization-agent-lite.git
 
 ### 2. Open the Project in Your Editor
 **This is important!** You must be inside the correct folder.
-1.  Open VS Code (or Cursor).
+1.  Open VS Code (or Cursor) if you're not already there.
 2.  Go to **File > Open Folder...**
 3.  Select the `ppa-mobilization-agent-lite` folder you just downloaded.
 4.  Open a **New Terminal** inside the editor (`Terminal > New Terminal` in the top menu).
@@ -98,11 +98,11 @@ pip install -r requirements.txt
 
 ---
 
-## Any Questions Go To Your LLM...
+## Remember Any Questions of course Go To Your LLM and let them know exactly what you're struggling with.
 
 ## 🔑 Configuration (The Secrets)
 
-This agent runs on **your** keys. We do not see them. We do not save them.
+This agent runs on **your** keys. We do not see them. We do not save them. At this point this has nothing to really do with us. You're running locally on your computer.
 
 ### 1. Create your .env file
 We need to rename the example file. The easiest way is to use this command in your terminal:
@@ -149,15 +149,16 @@ This will automatically open a browser window with your **Mission Control** inte
 
 ### The Knowledge Base
 The agent reads **any PDF** you put inside the `knowledge/` folder.
-*   **Default:** Included is the **Poor People App White Paper**.
+*   **Default:** Included is the **Poor People App White Paper** as well as the **PPA_Nostr_Addendum**.
 *   **Make it Yours:** Delete the existing PDFs and drag in your own manifestos or research. The agent "learns" whatever is in this folder.
 
-### The Helper (Stuck?)
+### Remember The Helper (Stuck?)
 If you get stuck, we have included a file called `LLM_HELP.txt`.
 1.  Open `LLM_HELP.txt`.
 2.  Copy the text.
-3.  Paste it into **Gemini** or **ChatGPT** along with your error message.
+3.  Paste it into **Gemini** or **Claude** along with your error message.
 4.  The AI will tell you exactly how to fix it.
+5.  The more specific and detailed you can be, the better answer you will get.
 
 ---
 
