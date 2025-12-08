@@ -94,7 +94,7 @@ source venv/bin/activate
 This installs the "brains" of the operation (OpenAI, Nostr SDK, etc).
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ---
