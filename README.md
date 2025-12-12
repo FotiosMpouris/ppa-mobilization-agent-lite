@@ -97,9 +97,7 @@ This installs the "brains" of the operation (OpenAI, Nostr SDK, etc).
 python -m pip install -r requirements.txt
 ```
 If this command fails, ensure your virtual environment is active (look for the green (venv)).
----
-
-## Remember Any Questions of course Go To Your LLM and let them know exactly what you're struggling with.
+Remember Any Questions of course Go To Your LLM and let them know exactly what you're struggling with.
 
 ## 🔑 Configuration (The Secrets)
 
