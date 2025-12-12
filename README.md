@@ -120,7 +120,7 @@ Now, open the file to edit it:
 notepad .env
 ```
 
-This will open the file. Now, go to **File > Save As** and save it as simply `.env` (remove the .example part).
+This will open the file. Add Access Tokens then save.
 
 ### 2. Get Your Keys (Tutorials Included)
 You need to fill in the values in that file. If you don't know how to get these keys, watch these specific tutorials:
