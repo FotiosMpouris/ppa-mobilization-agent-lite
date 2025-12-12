@@ -96,7 +96,7 @@ This installs the "brains" of the operation (OpenAI, Nostr SDK, etc).
 ```bash
 python -m pip install -r requirements.txt
 ```
-
+If this command fails, ensure your virtual environment is active (look for the green (venv)).
 ---
 
 ## Remember Any Questions of course Go To Your LLM and let them know exactly what you're struggling with.
@@ -106,10 +106,19 @@ python -m pip install -r requirements.txt
 This agent runs on **your** keys. We do not see them. We do not save them. At this point this has nothing to really do with us. You're running locally on your computer.
 
 ### 1. Create your .env file
-We need to rename the example file. The easiest way is to use this command in your terminal:
+We need to create the secrets file. Run this exact command in your terminal to create it safely (this avoids the common mistake of saving it as a text file):
 
+Windows:
 ```bash
-notepad .env.example
+copy .env.example .env
+```
+Mac/Linux:
+```bash
+cp .env.example .env
+```
+Now, open the file to edit it:
+```bash
+notepad .env
 ```
 
 This will open the file. Now, go to **File > Save As** and save it as simply `.env` (remove the .example part).
@@ -174,3 +183,14 @@ We built this tool to help you mobilize your community. If you found this useful
 **Troubleshooting:**
 *   **"Command not found":** Ensure you installed Python and checked the box "Add to PATH" during installation.
 *   **Trend Micro / Antivirus Blocking:** Sometimes security software blocks the script. Allow the folder in your antivirus settings, or use the `python -m streamlit ...` command above.
+*   "No module named streamlit": This means your "sandbox" isn't active.
+   1. Look at your command line. Do you see (venv) at the start?
+   2. If not, run: .\venv\Scripts\activate
+   3. Then try running the app again.
+*   "Missing Keys" (Red Box in UI):
+      You likely saved your file as .env.txt by accident. Windows hides this extension.
+      To fix it, run this command in your terminal: Rename-Item .env.txt .env
+      Then refresh the app.
+*   "SecurityError / Scripts is disabled":
+      If you opened a new terminal window, Windows might have locked it again.
+      Run this unlock command again: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
