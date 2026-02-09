@@ -2,7 +2,56 @@
 
 A standalone AI agent that runs entirely on your local computer to automate content creation and posting to Nostr and Telegram.
 
-## Quick Start
+---
+
+## 🤖 Agent-Assisted Setup (Recommended)
+
+**Using Cursor, VS Code, or any IDE with an AI agent? This is the easiest way:**
+
+1. **Open your IDE** (Cursor, VS Code with Copilot, Windsurf, etc.)
+2. **Start your Agent/Composer**
+3. **Paste this prompt:**
+```
+I want to run this project locally on my computer:
+https://github.com/FotiosMpouris/ppa-mobilization-agent-lite
+
+Please guide me through setup step-by-step and verify each command is safe before I run it.
+```
+
+The agent will walk you through:
+- Cloning the repository
+- Setting up the Python environment
+- Installing dependencies
+- Creating your `.env` file safely
+- Troubleshooting any issues in real-time
+
+### What You'll Need:
+
+You'll need these API keys (the agent will help you add them safely):
+
+- **OpenAI API Key** - [Watch: How to get it](https://www.youtube.com/watch?v=qgT-quk3JEo&t=33s)
+- **Nostr Keys** - [Watch: How to get it](https://www.youtube.com/watch?v=u_U2obseVwY)
+- **Telegram Bot Token** (optional) - [Watch: How to get it](https://www.youtube.com/watch?v=B9VsT7vV6jI)
+
+---
+
+## 🛠️ Manual Setup
+
+**Prefer to do it yourself? Here's the quick command list:**
+
+### Prerequisites
+
+- **Python 3.14** - [Download here](https://www.python.org/downloads/)
+  - ⚠️ **IMPORTANT**: Check "Add Python to PATH" during installation
+- **Git** - [Download here](https://git-scm.com/install/windows)
+
+Check if already installed:
+```bash
+python --version
+git --version
+```
+
+### Setup Commands
 ```bash
 # 1. Clone the repository
 git clone https://github.com/FotiosMpouris/ppa-mobilization-agent-lite.git
@@ -27,10 +76,11 @@ copy .env.example .env
 cp .env.example .env
 
 # 6. Add your API keys to .env
+# Open the .env file in any text editor and add your keys
 # Get your keys using these video tutorials:
-# - OpenAI API Key: https://youtu.be/[David Ondrej's video]
-# - Nostr Keys: https://youtu.be/[Oslo Freedom Forum video]
-# - Telegram Bot (optional): https://youtu.be/[JarvisBot video]
+# - OpenAI API Key: https://www.youtube.com/watch?v=qgT-quk3JEo&t=33s
+# - Nostr Keys: https://www.youtube.com/watch?v=u_U2obseVwY
+# - Telegram Bot (optional): https://www.youtube.com/watch?v=B9VsT7vV6jI
 
 # 7. Launch the app
 python -m streamlit run run.py
@@ -38,32 +88,7 @@ python -m streamlit run run.py
 
 Your browser will open automatically with the interface.
 
----
-
-## What This Tool Does
-
-- **The Brain**: Reads PDF documents from the `knowledge/` folder
-- **The Voice**: Uses OpenAI to generate content in your style
-- **The Memory**: Remembers the last 5 posts to avoid repetition
-- **The Broadcast**: Posts directly to Nostr and Telegram
-
----
-
-## Prerequisites
-
-- **Python 3.14** - [Download here](https://www.python.org/downloads/)
-  - ⚠️ **IMPORTANT**: Check "Add Python to PATH" during installation
-- **Git** - [Download here](https://git-scm.com/install/windows)
-
-Check if already installed:
-```bash
-python --version
-git --version
-```
-
----
-
-## Windows Security Note
+### Windows Security Note
 
 If you get a security error when activating the virtual environment, run:
 ```bash
@@ -73,7 +98,16 @@ Then try activating again.
 
 ---
 
-## Customizing Your Agent
+## 🧠 What This Tool Does
+
+- **The Brain**: Reads PDF documents from the `knowledge/` folder
+- **The Voice**: Uses OpenAI to generate content in your style
+- **The Memory**: Remembers the last 5 posts to avoid repetition
+- **The Broadcast**: Posts directly to Nostr and Telegram
+
+---
+
+## 📚 Customizing Your Agent
 
 ### Knowledge Base
 Place any PDF files in the `knowledge/` folder. The agent will read and learn from them.
@@ -86,7 +120,7 @@ Delete these and add your own content to customize the agent for your cause.
 
 ---
 
-## Troubleshooting
+## 🔧 Troubleshooting
 
 **"Command not found"**
 - Python wasn't added to PATH during installation. Reinstall and check the box.
@@ -110,7 +144,7 @@ Delete these and add your own content to customize the agent for your cause.
 
 ---
 
-## Support the Mission
+## 🤝 Support the Mission
 
 This tool was built to help mobilize communities around the Poor People App.
 
